@@ -2,6 +2,8 @@
 
 View the live [site](https://fir-react-test-a7f84.firebaseapp.com/).
 
+![Ending result of Images Gallery homepage for a typical user](src/demos/lil-react-deploy-firebase-main.png)
+
 ## Learning Goals and Concepts
 
 1. React's context API for state management as solution to excessive "prop drilling"
