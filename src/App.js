@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useMemo, useContext } from "react";
+import { Context } from "./context/FirestoreContext";
+import List from "./components/List";
+import "./App.css";
 
 function App() {
+  const { state } = useContext(Context);
+  const count = useMemo(() => {
+    return `you have ${state.items.length} image${
+      state.items.length > 1 ? "s" : ""
+    }`;
+  }, [state.items]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="text-center">Gallery</h1>
+      {count}
+      <List items={state.items} />
+    </>
   );
 }
-
 export default App;
